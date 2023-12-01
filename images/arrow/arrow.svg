@@ -1,0 +1,17 @@
+<svg width="50" height="25" viewBox="0 0 20 10" xmlns="http://www.w3.org/2000/svg">
+    <path  d="M 1 1 L 10 9 L 19 1"/>
+
+    <style>
+        path {
+            fill: none;
+            stroke: white;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 1;
+        }
+    </style>
+    <!-- M x y - поместить курсор в точку
+            L x y - нарисовать линию до точки
+            l x y - на сколько двигаешь(x, y) 
+            fill="none" - з -->
+</svg>

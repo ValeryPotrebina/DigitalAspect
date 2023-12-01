@@ -1,0 +1,247 @@
+body {
+    margin: 0;
+    font-style: cursive;
+    font-size: 15px;
+    line-height: 1.6;
+    color: black;
+    font-family: 'TildaSans', Arial, sans-serif;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: url("images/backgroung.jpg") center no-repeat;
+
+    /* background: rgb(25, 0, 255); */
+    /* opacity: 0.1; */
+    /* align-items: center; */
+    /* opacity: 0.5; */
+    position: relative;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+
+.intro::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* too, lest, right, bottom = 0  */
+    background: -webkit-linear-gradient(top, rgba(9, 24, 51, 0.8), rgba(9, 8, 31, 0.7));
+    /* background: -webkit-linear-gradient(top, rgba(9, 47, 51, 0.8), rgba(8, 29, 31, 0.7)); */
+    /* background: rgba(10, 10, 10, 0.3); */
+}
+
+
+
+.intro__inner {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.intro__title {
+    color: rgb(240, 245, 255);
+    font-size: 65px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 2;
+}
+
+
+.content {
+    /* text-align: center; */
+    font-size: 22px;
+    color: rgb(240, 245, 255);
+    font-weight: 300;
+}
+
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    /* padding-top: 10px; */
+    width: 100%;
+    /* height: 100px;   */
+    /* relative - относительное позиционирование
+    absolute - по факту какое  */
+    position: fixed;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.3)
+}
+
+.header__inner {
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    /* justify-content Отвечает за выравнивание элементов по главной оси: */
+    /* align-items работает с осью, перпендикулярной главной оси. */
+    align-items: center;
+}
+
+.header__logo {
+    /* position: absolute;
+    left: 50%;
+    transform: translateX(-50%); */
+    font-family: 'Cairo', sans-serif;
+    font-size: 25px;
+    font-style: initial;
+    color: whitesmoke
+}
+
+.nav {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+
+
+.nav__link {
+    /*  элемент отображается как строчный элемент, но его содержимое может быть отформатировано как блок. */
+    display: inline-block;
+    /* Выравнивает верхний край элемента и его потомков с верхним краем всей строки. */
+    margin: 0 10px;
+    position: relative;
+    color: white;
+    text-decoration: none;
+
+}
+
+.nav__link:hover:after {
+    opacity: 1;
+}
+
+.nav__link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+
+    background-color: #ffffff;
+
+    opacity: 0;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+
+    transition: opacity .3s linear;
+}
+
+/* Moveon */
+.moveon {
+    width: 100%;
+    /* position: absolute; */
+    /* bottom: 0; */
+    /* left: 0; */
+    /* z-index: 1; */
+}
+
+.moveon__inner {
+    width: 20px;
+    position: absolute;
+    right: 46%;
+    bottom: 60px;
+    /* padding: 15px 20px 50px 65px; */
+    /* border-top: 35px; */
+    cursor: pointer;
+}
+
+.moveon__inner::after {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 25px;
+
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+
+    position: absolute;
+    right: 50%;
+    /* top: 50%;
+    right: 20px;
+    z-index: 1; */
+
+    /*  */
+    transform: translateY(-50%) rotate(135deg);
+
+}
+
+
+/* Arrow */
+
+.arrow {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1000;
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 60px;
+    padding-bottom: 18px;
+}
+
+.arrow__icon {
+    display: block;
+    fill: none;
+    stroke: white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1;
+    transition: stroke 0.3s linear;
+    /*  ease-in-out (что-то замедляет в анимациии загуглить!!!)
+    infinite - количетсво повторений */
+    animation: slide 2.5s ease-in-out infinite;
+}
+
+.arrow__icon:hover {
+    stroke: #a6abad;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(18px);
+    }
+
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
