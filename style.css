@@ -245,3 +245,66 @@ p {
     }
 
 }
+
+/* Mission */
+.section { 
+    /* Внутренний отступ (1 парам -> по горизонтали, 2 парам -> по вертикали  */
+    padding: 186px 0;
+
+}
+
+.ourmission {
+    display: flex;
+}
+.ourmission__item {
+    display: flex;
+    width: 560px; 
+    height: 560px; 
+    flex: 1 1 auto;
+}
+
+.ourmission__img {
+    width: 560px;
+    height: 560px;
+}
+
+.ourmission__content {
+    margin: auto 20px;
+    /* Как сделать центр не через padding*/
+    /* padding-top: 220px; */
+    width: 100%;
+    text-align: center; 
+
+    /* margin: 0 auto; */
+    /* Центируем текст */
+     
+}
+
+.ourmission__title {
+    font-size: 35px;
+    font-weight: 900;
+    color: #000000;
+    font-family: 'Noto Sans Display', sans-serif;
+
+}
+
+.ourmission__title::after{
+    content: '';
+    display: block;
+    width: 100%;
+    max-width: 55px;
+    height: 2.2px;
+    background-color: #259da8;
+    /* центрирование полоски */
+    /* вертикаль по 35, горизонталь - auto (центр) */
+    margin: 22px auto;
+}
+
+
+.ourmission__text {
+    font-size: 16px;
+    font-weight: 200;
+    color: #5f6466;
+    font-family: 'Noto Sans Display', sans-serif;
+
+}
