@@ -95,12 +95,16 @@ img {
     /* relative - относительное позиционирование
     absolute - по факту какое  */
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
     background-color: rgba(0, 0, 0, 0.3)
 }
 
 .header__inner {
     /* position: relative; */
+    margin: 0 20px;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -126,7 +130,55 @@ img {
     font-weight: 700;
 }
 
+/* Nav toggle */
+.nav-toggle {
+    display: none;
+    padding: 10px 0;
+    width: 30px;
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    z-index: 1;
 
+
+    cursor: pointer;
+    font-size: 0;
+    color: transparent;
+    border: 0;
+    background: 0;
+}
+
+.nav-toggle__item {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.nav-toggle__item::before,
+.nav-toggle__item::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+.nav-toggle__item::before {
+    top: -8px;
+}
+
+.nav-toggle__item::after {
+    bottom: -8px;
+}
 
 .nav__link {
     /*  элемент отображается как строчный элемент, но его содержимое может быть отформатировано как блок. */
@@ -426,3 +478,34 @@ img {
 
 }
 
+
+
+/* Адаптивность */
+
+/* Монитор */
+@media (max-width: 1230px) {
+    .header__inner {
+        
+       
+    }
+}
+
+/* Планшет */
+@media (max-width: 990px) {
+
+}
+
+@media (max-width: 770px) { 
+
+    .nav {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+}
+
+/* Мобилка */
+@media (max-width: 575px) {
+}
