@@ -101,6 +101,23 @@ img {
     z-index: 1000;
     background-color: rgba(0, 0, 0, 0.3)
 }
+.header.active {
+    padding: 10px 0;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+    background-color: #0a0322;
+ 
+}
+
+.header.active .header__inner {
+    height: 50%;
+}
+
+header::after {
+    content: "";
+    display: block;
+    width: 100%;
+}
 
 .header__inner {
     /* position: relative; */
@@ -128,56 +145,6 @@ img {
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 700;
-}
-
-/* Nav toggle */
-.nav-toggle {
-    display: none;
-    padding: 10px 0;
-    width: 30px;
-    position: absolute;
-    top: 40px;
-    right: 30px;
-    z-index: 1;
-
-
-    cursor: pointer;
-    font-size: 0;
-    color: transparent;
-    border: 0;
-    background: 0;
-}
-
-.nav-toggle__item {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: #fff;
-
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-}
-
-.nav-toggle__item::before,
-.nav-toggle__item::after {
-    content: "";
-    width: 100%;
-    height: 3px;
-    background-color: #fff;
-    position: absolute;
-    left: 0;
-    z-index: 1;
-}
-.nav-toggle__item::before {
-    top: -8px;
-}
-
-.nav-toggle__item::after {
-    bottom: -8px;
 }
 
 .nav__link {
@@ -212,6 +179,81 @@ img {
 
     transition: opacity .3s linear;
 }
+
+/* Nav toggle */
+.nav-toggle {
+    display: none;
+    padding: 10px 0;
+    width: 30px;
+    position: absolute;
+    top: 34%;
+    right: 3%;
+    /* top: 40px;
+    right: 30px; */
+    z-index: 1;
+
+
+    cursor: pointer;
+    font-size: 0;
+    color: transparent;
+    border: 0;
+    background: 0;
+}
+
+/* Три полоски у бургер меню */
+.nav-toggle__item {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+
+    transition: background .2s linear;
+}
+
+.nav-toggle__item::before,
+.nav-toggle__item::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    transition: transform .2s linear;
+}
+.nav-toggle__item::before {
+    top: -8px;
+}
+
+.nav-toggle__item::after {
+    bottom: -8px;
+}   
+
+/* Делаем крестик, когда бургер меню активно */
+.nav-toggle.active .nav-toggle__item {
+    background: none;
+}
+
+.nav-toggle.active .nav-toggle__item::before {
+    transform-origin: left top;
+    transform: rotate(45deg)
+    translate3d(0, -3px, 0);
+}
+
+.nav-toggle.active .nav-toggle__item::after {
+    transform-origin: left bottom;
+    transform: rotate(-45deg)
+    translateY(2px);
+}
+
+
 
 /* Moveon */
 .moveon {
@@ -301,9 +343,14 @@ img {
 
 /* Mission */
 .section { 
+    /* РАЗОБРАТЬСЯ С PADDINGAMI */
     /* Внутренний отступ (1 парам -> по горизонтали, 2 парам -> по вертикали  */
-    padding: 186px 0;
+    padding: 140px 0 ;
+}
 
+
+.section--gray {
+    background-color: #ededed;
 }
 
 .ourmission {
@@ -365,7 +412,6 @@ img {
 /* Services */
 
 .services {
-    background-color: #ededed;
     box-sizing: border-box;
 }
 .section__header {
@@ -498,11 +544,26 @@ img {
 @media (max-width: 770px) { 
 
     .nav {
-        display: none;
+        /* display: none; */
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 10px;
+        background-color: rgba(10, 3, 34, 0.3);
     }
 
     .nav-toggle {
         display: block;
+    }
+
+    .nav__link {
+        display: block;
+        margin: 0;
+        padding:  8px 10px;
+    }
+
+    .nav__link::after {
+        width: 15%;
     }
 }
 
