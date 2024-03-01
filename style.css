@@ -85,6 +85,7 @@ img {
     width: 100%;
     max-width: 1160px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 /* Header */
@@ -101,12 +102,13 @@ img {
     z-index: 1000;
     background-color: rgba(0, 0, 0, 0.3)
 }
+
 .header.active {
     padding: 10px 0;
 
     box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
     background-color: #0a0322;
- 
+
 }
 
 .header.active .header__inner {
@@ -228,13 +230,14 @@ header::after {
     z-index: 1;
     transition: transform .2s linear;
 }
+
 .nav-toggle__item::before {
     top: -8px;
 }
 
 .nav-toggle__item::after {
     bottom: -8px;
-}   
+}
 
 /* Делаем крестик, когда бургер меню активно */
 .nav-toggle.active .nav-toggle__item {
@@ -243,14 +246,12 @@ header::after {
 
 .nav-toggle.active .nav-toggle__item::before {
     transform-origin: left top;
-    transform: rotate(45deg)
-    translate3d(0, -3px, 0);
+    transform: rotate(45deg) translate3d(0, -3px, 0);
 }
 
 .nav-toggle.active .nav-toggle__item::after {
     transform-origin: left bottom;
-    transform: rotate(-45deg)
-    translateY(2px);
+    transform: rotate(-45deg) translateY(2px);
 }
 
 
@@ -342,12 +343,10 @@ header::after {
 }
 
 /* Mission */
-.section { 
-    /* РАЗОБРАТЬСЯ С PADDINGAMI */
+.section {
     /* Внутренний отступ (1 парам -> по горизонтали, 2 парам -> по вертикали  */
-    padding: 140px 0 ;
+    padding: 140px 0;
 }
-
 
 .section--gray {
     background-color: #ededed;
@@ -355,29 +354,36 @@ header::after {
 
 .ourmission {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
+
 .ourmission__item {
+    padding: 0 15px;
+    /* flex: 1 1 0; */
     display: flex;
-    width: 560px; 
-    height: 560px; 
-    flex: 1 1 auto;
+    text-align: center;
+    align-items: center;
+    width: 50%;
 }
 
 .ourmission__img {
-    width: 560px;
-    height: 560px;
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .ourmission__content {
-    margin: auto 20px;
+    /* padding-top: 30%; */
+
+    /* margin: auto 20px; */
     /* Как сделать центр не через padding*/
     /* padding-top: 220px; */
-    width: 100%;
-    text-align: center; 
+    text-align: center;
 
     /* margin: 0 auto; */
     /* Центируем текст */
-     
+
 }
 
 .ourmission__title {
@@ -388,7 +394,7 @@ header::after {
 
 }
 
-.ourmission__title::after{
+.ourmission__title::after {
     content: '';
     display: block;
     width: 100%;
@@ -413,7 +419,10 @@ header::after {
 
 .services {
     box-sizing: border-box;
+    background-color: #ffffff;
+    margin: 0 10px;
 }
+
 .section__header {
     padding: 150px 0;
     text-align: center;
@@ -426,25 +435,35 @@ header::after {
 }
 
 .service {
+    width: 100%;
     display: flex;
-    background-color: #ffffff;
+    flex-wrap: wrap;
+
+    /* margin: 0 -15px; */
 }
 
 .service__item {
+    /* padding: 0 15px; */
     flex: 1 1 0;
     text-align: center;
-    height: 417.27px;
+    height: auto;
+    /* height: 417.27px; */
     display: flex;
     justify-content: center;
     align-items: center;
+    /* Центрируем по вертикали */
 }
+
 .service__img {
-    width: 580px;
-    height: 417.27px;
+    max-width: 100%;
+    height: auto;
+    /* width: 580px;
+    height: 417.27px; */
 }
 
 .service__about {
     padding: 0 40px;
+    max-height: 380px;
     /* padding: 83px 40px; */
 }
 
@@ -479,12 +498,13 @@ header::after {
     font-weight: 530;
 }
 
-.contacts__email{
+.contacts__email {
     /* padding: 100px 0; */
     font-size: 40px;
     font-weight: 550;
     padding-bottom: 100px;
 }
+
 .contacts__address {
     font-size: 22px;
     font-weight: 0;
@@ -529,19 +549,33 @@ header::after {
 /* Адаптивность */
 
 /* Монитор */
-@media (max-width: 1230px) {
-    .header__inner {
-        
-       
+@media (max-width: 1050px) {
+    .header__inner {}
+
+    .about__title {
+        font-size: 32px;
+    }
+
+    .about__content {
+        font-size: 14px;
     }
 }
 
 /* Планшет */
 @media (max-width: 990px) {
 
+    /* Ourmission */
+    .ourmission__title {
+        font-size: 30px;
+    }
+
+    .ourmission__text {
+        font-size: 16px;
+    }
 }
 
-@media (max-width: 770px) { 
+
+@media (max-width: 770px) {
 
     .nav {
         /* display: none; */
@@ -559,14 +593,48 @@ header::after {
     .nav__link {
         display: block;
         margin: 0;
-        padding:  8px 10px;
+        padding: 8px 10px;
     }
 
     .nav__link::after {
         width: 15%;
     }
+
+    .about__title {
+        font-size: 24px;
+    }
+
+    .about__content {
+        font-size: 11px;
+    }
+
+    /* Ourmission */
+
+    .ourmission__item {
+        width: 100%;
+        margin-bottom: 35px;
+        align-items: center;
+        display: block;
+        /* margin: 35px auto;  */
+    }
+
+    .ourmission__item .ourmission__img {
+        display: block;
+        margin: 0 auto;
+    }
+
 }
+
+
 
 /* Мобилка */
 @media (max-width: 575px) {
+     /* Ourmission */
+     .ourmission__title {
+        font-size: 30px;
+    }
+
+    .ourmission__text {
+        font-size: 16px;
+    }
 }
