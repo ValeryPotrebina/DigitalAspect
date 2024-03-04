@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    font-style: cursive;
+    font-size: 15px;
+    line-height: 1.6;
+    color: black;
+    font-family: 'TildaSans', Arial, sans-serif;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img {
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header {
+    padding-top: 100px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.privacy__name {
+    font-size: 26px;
+    line-height: 1.45;
+    font-weight: 600;
+    color: #000;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+    /* font-family: 'TildaSans', Arial, sans-serif; */
+}
+
+
+.header__name {
+    padding: 50px 0;
+}
+.header__inner {
+    text-align: center;
+}
+
+.title {
+    font-size: 20px;
+    line-height: 1.55;
+    font-weight: 600;
+    color: #000;
+    /* font-family: 'TildaSans', Arial, sans-serif; */
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+
+    padding: 30px 0;
+}
+
+.content__text {
+    font-size: 20px;
+    line-height: 1.55;
+    /* font-family: 'TildaSans', Arial, sans-serif; */
+    font-weight: 300;
+    color: #000000ec;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+    text-align: left;
+}
+
+.numeric {
+    font-weight: 700;
+}

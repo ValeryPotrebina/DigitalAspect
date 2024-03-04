@@ -13,25 +13,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight&family=Noto+Sans+Display&display=swap"
         rel="stylesheet">
+    <script src="https://kit.fontawesome.com/efa15adb15.js" crossorigin="anonymous"></script>
 
     <title>DigitalAspect</title>
 </head>
 
 <body>
     <!-- Шапка сайта -->
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
             <div class="header__inner">
-                <div class="header__logo">DigitalAspect</div>
+                <div class="header__logo" data-scroll="#intro">
+                    <!-- <div class="logo__name"> -->
+                    DigitalAspect
+                    <!-- </div> -->
+                </div>
 
-                <nav class="nav">
-                    <a href="#" class="nav__link">О нас</a>
-                    <a href="#" class="nav__link">Услуги</a>
-                    <a href="#" class="nav__link">Контакты</a>
+                <nav class="nav" id="nav">
+                    <a href="#" class="nav__link" data-scroll="#ourmission">О нас</a>
+                    <a href="#" class="nav__link" data-scroll="#services">Услуги</a>
+                    <a href="#" class="nav__link" data-scroll="#contacts">Контакты</a>
                 </nav>
 
                 <!-- Бургер меню -->
-                <button class="nav-toggle" type="button">
+                <button class="nav-toggle" id="nav_toggle" type="button">
                     <span class="nav-toggle__item">
                         Меню
                     </span>
@@ -40,7 +45,7 @@
         </div>
     </header>
 
-    <div class="intro">
+    <div class="intro" id="intro">
         <div class="container">
             <div class="intro__inner">
                 <h1 class="intro__title">Цифровой аспект</h1>
@@ -49,7 +54,7 @@
                 </div>
             </div>
         </div>
-        <div class="arrow">
+        <button class="arrow" data-scroll="#ourmission">
             <svg class="arrow__icon" width="50" height="25" viewBox="0 0 20 10" xmlns="http://www.w3.org/2000/svg">
                 <path d="M 1 1 L 10 9 L 19 1" />
                 <!-- M x y - поместить курсор в точку
@@ -57,10 +62,10 @@
                         l x y - на сколько двигаешь(x, y) 
                         fill="none" - з -->
             </svg>
-        </div>
+        </button>
     </div>
 
-    <section class="section">
+    <section class="section" id="ourmission">
         <div class="container">
             <div class="ourmission">
                 <div class="ourmission__item">
@@ -82,7 +87,9 @@
         </div>
     </section>
 
-    <section class="section section--gray">
+
+
+    <section class="section section--gray" id="services">
         <div class="container">
             <div class="section__header">
                 <h2 class="section__title">Направления деятельности</h2>
@@ -198,10 +205,10 @@
 
 
                 </div> <!-- 4th  -->
-            </section> <!-- Services -->
-        </div>
+    </section> <!-- Services -->
     </div>
-    <div class="contacts">
+    </div>
+    <div class="contacts" id="contacts">
         <div class="container">
             <div class="contants__header">
                 <h1 class="contacts__title">Наши контакты</h1>
@@ -216,11 +223,21 @@
     <footer class="footer">
         <div class="footer__inner">
             <div class="footer__logo">© 2023 DigitalAspect</div>
-            <a class="footer__dp" href="#">Политика в отношении обработки персональных данных</a>
-            <div class="back__top">Back to top</div>
+            <a class="footer__dp" href="/privacy.html">Политика в отношении обработки персональных данных</a>
+                <div class="back__top" data-scroll="#intro">
+                    Back to top
+                    <a href="#" class="arrow__up">
+                        <i class="fa-solid fa-arrow-turn-up"></i>
+                    </a>
+            </div>
         </div>
     </footer>
 
+
+    <!-- jquery CDN GOOGLE -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Подключение js файла -->
+    <script src="app.js"></script>
 </body>
 
 </html>
