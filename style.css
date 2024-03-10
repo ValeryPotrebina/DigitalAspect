@@ -459,8 +459,8 @@ header::after {
 }
 
 .service__item {
-    /* padding: 0 15px; */
-    flex: 1 1 0;
+    width: 50%;
+    min-height: 300px;
     text-align: center;
     height: auto;
     /* height: 417.27px; */
@@ -544,10 +544,10 @@ header::after {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 80px;
+    height: auto;
     align-items: center;
     color: #ffffff;
-    padding: 0 35px;
+    padding: 40px 35px;
 }
 
 .footer__dp {
@@ -566,6 +566,83 @@ header::after {
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
+
+/* Privacy */
+
+.privacy__container {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.privacy__header {
+    /* padding-top: 100px; */
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.privacy__name {
+    font-size: 26px;
+    line-height: 1.45;
+    font-weight: 600;
+    color: #000;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
+    /* font-family: 'TildaSans', Arial, sans-serif; */
+}
+
+
+.privacy-header__name {
+    padding: 50px 0;
+}
+
+.privacy-header__inner {
+    text-align: center;
+}
+
+.privacy-title {
+    font-size: 20px;
+    line-height: 1.55;
+    font-weight: 600;
+    color: #000;
+    /* font-family: 'TildaSans', Arial, sans-serif; */
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
+
+    text-transform: uppercase;
+    padding: 30px 0;
+}
+
+.content__text {
+    font-size: 20px;
+    line-height: 1.55;
+    /* font-family: 'TildaSans', Arial, sans-serif; */
+    font-weight: 300;
+    color: #000000ec;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.numeric {
+    font-weight: 700;
+}
+
 
 /* Адаптивность */
 
@@ -593,6 +670,23 @@ header::after {
     .ourmission__text {
         font-size: 16px;
     }
+
+    /* Service */
+    .about__title {
+        font-size: 28px;
+    }
+
+    .footer__inner {
+        display: block;
+        text-align: center;
+        padding: 20px 35px;
+    }
+
+    .footer__logo,
+    .footer__dp,
+    .back__top {
+        padding: 10px 0;
+    }
 }
 
 
@@ -610,7 +704,7 @@ header::after {
     .nav.active {
         display: block;
     }
-    
+
     .nav-toggle {
         display: block;
     }
@@ -625,13 +719,18 @@ header::after {
         width: 15%;
     }
 
-    .about__title {
+    .service__item {
+        width: 100%;
+        height: auto;
+    }
+
+    /* .about__title {
         font-size: 24px;
     }
 
     .about__content {
         font-size: 11px;
-    }
+    } */
 
     /* Ourmission */
 
@@ -654,8 +753,9 @@ header::after {
 
 /* Мобилка */
 @media (max-width: 575px) {
-     /* Ourmission */
-     .ourmission__title {
+
+    /* Ourmission */
+    .ourmission__title {
         font-size: 30px;
     }
 
