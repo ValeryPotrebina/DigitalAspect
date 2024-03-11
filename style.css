@@ -142,6 +142,11 @@ header::after {
     transition: color .2s linear;
 }
 
+.privacy__logo {
+    text-decoration: none;
+    color: white;
+}
+
 .nav {
     font-size: 14px;
     text-transform: uppercase;
